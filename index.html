@@ -1,151 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AI Flood Risk Detection</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #eef6f9;
-    color: #123;
-}
-
-header {
-    background: #075985;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 25px auto;
-    padding: 15px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 2px 8px #bbb;
-}
-
-.value {
-    font-size: 28px;
-    font-weight: bold;
-    color: #075985;
-}
-
-.process {
-    margin-top: 25px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.status {
-    margin-top: 20px;
-    padding: 15px;
-    background: #dff6e4;
-    border-radius: 10px;
-}
-
-.error {
-    background: #ffdede;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-}
-</style>
-</head>
-
 <body>
 
 <header>
     <h1>🌊 AI-Based Real-Time Flood Risk Detection</h1>
-    <p>Real-Time Flood Monitoring & Early Warning System</p>
+    <p>Real-Time Weather + Flood Formation Monitoring</p>
 </header>
 
 <div class="container">
 
-    <h2>📍 Chennai — Current Weather</h2>
+    <!-- LIVE WEATHER -->
+    <section class="card">
+        <h2>🌧️ Live Weather</h2>
 
-    <div class="cards">
+        <div class="weather-grid">
 
-        <div class="card">
-            <h3>🌡️ Temperature</h3>
-            <div class="value" id="temperature">--</div>
-            <p>°C</p>
+            <div class="weather-box">
+                <h3>🌡️ Temperature</h3>
+                <p id="temperature">-- °C</p>
+            </div>
+
+            <div class="weather-box">
+                <h3>💧 Humidity</h3>
+                <p id="humidity">-- %</p>
+            </div>
+
+            <div class="weather-box">
+                <h3>🌧️ Rain</h3>
+                <p id="rain">-- mm</p>
+            </div>
+
+            <div class="weather-box">
+                <h3>💦 Precipitation</h3>
+                <p id="precipitation">-- mm</p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>💧 Humidity</h3>
-            <div class="value" id="humidity">--</div>
-            <p>%</p>
+        <p id="updated">Updating...</p>
+    </section>
+
+
+    <!-- FLOOD FORMATION -->
+    <section class="card">
+
+        <h2>🌊 Real-Time Flood Formation Process</h2>
+
+        <div class="flow">
+
+            <div class="flow-box">
+                🌧️
+                <strong>Rainfall</strong>
+                <small>Rain falls over the catchment</small>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <div class="flow-box">
+                💧
+                <strong>Reservoir / Lake</strong>
+                <small>Water enters and level rises</small>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <div class="flow-box">
+                💦
+                <strong>Inflow</strong>
+                <small>More water enters the reservoir</small>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <div class="flow-box">
+                🚪
+                <strong>Gate / Release</strong>
+                <small>Controlled water release</small>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <div class="flow-box">
+                🌊
+                <strong>River</strong>
+                <small>Downstream water level changes</small>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <div class="flow-box">
+                ⚠️
+                <strong>Flood Risk</strong>
+                <small>Risk is evaluated</small>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>🌧️ Rain</h3>
-            <div class="value" id="rain">--</div>
-            <p>mm</p>
-        </div>
+    </section>
 
-        <div class="card">
-            <h3>💦 Precipitation</h3>
-            <div class="value" id="precipitation">--</div>
-            <p>mm</p>
-        </div>
 
-    </div>
+    <!-- RESERVOIRS -->
+    <section class="card">
 
-    <div class="status" id="status">
-        🔄 Loading real-time weather data...
-    </div>
+        <h2>💧 Chennai Reservoir Monitoring</h2>
 
-    <div class="process">
-
-        <h2>🌊 Flood Formation Process</h2>
-
-        <p>
-            🌧️ Rainfall
-            →
-            💧 Reservoir
-            →
-            🚪 Water Release
-            →
-            🌊 River
-            →
-            🏘️ Downstream
-            →
-            ⚠️ Flood Risk
+        <p class="info">
+            Official Chennai Flood Monitoring locations
         </p>
 
-    </div>
+        <div class="reservoir-grid">
+
+            <div class="reservoir">
+                <h3>Poondi</h3>
+                <p>💧 Water Level</p>
+                <strong>Official Live Data</strong>
+            </div>
+
+            <div class="reservoir">
+                <h3>Cholavaram</h3>
+                <p>💧 Water Level</p>
+                <strong>Official Live Data</strong>
+            </div>
+
+            <div class="reservoir">
+                <h3>Red Hills</h3>
+                <p>💧 Water Level</p>
+                <strong>Official Live Data</strong>
+            </div>
+
+            <div class="reservoir">
+                <h3>Chembarambakkam</h3>
+                <p>💧 Water Level</p>
+                <strong>Official Live Data</strong>
+            </div>
+
+        </div>
+
+        <a
+            href="https://chennaifloodmonitor.tn.gov.in/"
+            target="_blank"
+            class="official-button">
+            🔗 Open Official Chennai Flood Monitoring
+        </a>
+
+    </section>
+
+
+    <!-- RIVER MONITORING -->
+    <section class="card">
+
+        <h2>🌊 Downstream River / Water-Level Monitoring</h2>
+
+        <div class="river-grid">
+
+            <div class="river">
+                <h3>Napier Bridge</h3>
+                <p>🌊 Water Level</p>
+                <strong>Official Monitoring</strong>
+            </div>
+
+            <div class="river">
+                <h3>Saidapet Bridge</h3>
+                <p>🌊 Water Level</p>
+                <strong>Official Monitoring</strong>
+            </div>
+
+            <div class="river">
+                <h3>Ennore Bridge</h3>
+                <p>🌊 Water Level</p>
+                <strong>Official Monitoring</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FLOOD RISK -->
+    <section class="card risk-card">
+
+        <h2>🤖 Flood Risk Status</h2>
+
+        <div id="riskStatus">
+            Monitoring real-time weather...
+        </div>
+
+    </section>
 
 </div>
 
-<footer>
-    AI Flood Risk Detection & Early Warning System
-</footer>
 
 <script>
 
 const API =
 "https://ai-flood-risk-system-1.onrender.com/weather?lat=13.0827&lon=80.2707";
+
 
 async function loadWeather() {
 
@@ -153,41 +200,68 @@ async function loadWeather() {
 
         const response = await fetch(API);
 
-        if (!response.ok) {
-            throw new Error("Server error");
-        }
-
         const data = await response.json();
 
-        document.getElementById("temperature").textContent =
-            data.temperature;
+        document.getElementById("temperature").innerText =
+            data.temperature + " °C";
 
-        document.getElementById("humidity").textContent =
-            data.humidity;
+        document.getElementById("humidity").innerText =
+            data.humidity + " %";
 
-        document.getElementById("rain").textContent =
-            data.rain;
+        document.getElementById("rain").innerText =
+            data.rain + " mm";
 
-        document.getElementById("precipitation").textContent =
-            data.precipitation;
+        document.getElementById("precipitation").innerText =
+            data.precipitation + " mm";
 
-        document.getElementById("status").textContent =
-            "✅ Real-time weather data loaded. Updated: " +
-            data.updated;
+        document.getElementById("updated").innerText =
+            "Last updated: " + data.updated;
 
-    } catch (error) {
 
-        document.getElementById("status").textContent =
-            "❌ Unable to load real-time weather data.";
+        /*
+           Simple demonstration risk logic.
 
-        document.getElementById("status").classList.add("error");
+           This is based only on current weather.
+           Later we will combine:
+           rainfall + reservoir + inflow + river level.
+        */
+
+        let rain = Number(data.rain);
+        let precipitation = Number(data.precipitation);
+
+        let risk = "LOW";
+
+        if (rain > 10 || precipitation > 10) {
+            risk = "MODERATE";
+        }
+
+        if (rain > 30 || precipitation > 30) {
+            risk = "HIGH";
+        }
+
+        document.getElementById("riskStatus").innerText =
+            "Current Weather-Based Risk: " + risk;
 
     }
+
+    catch (error) {
+
+        console.error(error);
+
+        document.getElementById("riskStatus").innerText =
+            "Unable to receive live weather data.";
+
+    }
+
 }
 
+
 loadWeather();
+
+
+// Update every 5 minutes
+setInterval(loadWeather, 300000);
 
 </script>
 
 </body>
-</html>
