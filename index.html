@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Flood Risk Detection & Early Warning System</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+AI-Based Real-Time Flood Risk Detection & Early Warning System
+</title>
+
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -20,13 +31,24 @@ body{
     color:#102a43;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-    background:linear-gradient(135deg,#06283d,#075985,#0e7490);
+    background:linear-gradient(
+        135deg,
+        #06283d,
+        #075985,
+        #0e7490
+    );
+
     color:white;
     padding:25px 6%;
-    box-shadow:0 4px 15px rgba(0,0,0,.2);
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.2);
 }
 
 .header-top{
@@ -53,7 +75,10 @@ header{
     font-weight:bold;
 }
 
-/* MAIN */
+
+/* =========================
+   MAIN
+========================= */
 
 .container{
     width:90%;
@@ -61,11 +86,14 @@ header{
     margin:30px auto;
 }
 
-/* SECTION */
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section-title{
     font-size:24px;
-    margin-bottom:18px;
+    margin-bottom:10px;
     color:#075985;
 }
 
@@ -74,19 +102,18 @@ header{
     margin-bottom:20px;
 }
 
-/* WEATHER */
 
-.weather-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
+/* =========================
+   GENERAL CARD
+========================= */
 
 .card{
     background:white;
     padding:22px;
     border-radius:15px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
 }
 
 .card-title{
@@ -106,25 +133,50 @@ header{
     color:#64748b;
 }
 
-/* PROCESS */
+
+/* =========================
+   WEATHER
+========================= */
+
+.weather-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
 
 .process{
     display:flex;
     align-items:center;
     justify-content:center;
     gap:8px;
+
     flex-wrap:wrap;
+
     margin:25px 0;
 }
 
 .process-box{
     background:white;
+
     border:2px solid #bae6fd;
+
     border-radius:14px;
+
     padding:16px 20px;
+
     text-align:center;
+
     min-width:135px;
-    box-shadow:0 4px 12px rgba(0,0,0,.06);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.06);
 }
 
 .process-icon{
@@ -138,44 +190,67 @@ header{
     font-weight:bold;
 }
 
-/* RESERVOIR */
+
+/* =========================
+   RESERVOIR
+========================= */
 
 .reservoir-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:18px;
 }
 
 .reservoir-card{
     background:white;
+
     border-radius:16px;
+
     padding:20px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
+
     border-top:5px solid #0284c7;
 }
 
 .reservoir-name{
     font-size:20px;
     font-weight:bold;
+
     color:#075985;
+
     margin-bottom:15px;
 }
 
 .monitor-status{
     display:inline-block;
+
     background:#e0f2fe;
+
     color:#0369a1;
+
     padding:7px 12px;
+
     border-radius:20px;
+
     font-size:13px;
+
     margin-bottom:15px;
 }
 
 .data-row{
     display:flex;
+
     justify-content:space-between;
+
     padding:9px 0;
-    border-bottom:1px solid #e5e7eb;
+
+    border-bottom:
+        1px solid #e5e7eb;
 }
 
 .data-label{
@@ -188,13 +263,21 @@ header{
 
 .source-btn{
     display:block;
+
     text-align:center;
+
     text-decoration:none;
+
     margin-top:16px;
+
     padding:10px;
+
     background:#075985;
+
     color:white;
+
     border-radius:9px;
+
     font-weight:bold;
 }
 
@@ -202,130 +285,268 @@ header{
     background:#0e7490;
 }
 
-/* RIVER */
+
+/* =========================
+   RIVER
+========================= */
 
 .river-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:18px;
 }
 
 .river-card{
     background:white;
+
     padding:20px;
+
     border-radius:16px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
 }
 
 .river-name{
     font-size:19px;
+
     font-weight:bold;
+
     color:#075985;
+
     margin-bottom:12px;
 }
 
 .river-status{
     padding:9px;
+
     background:#ecfdf5;
+
     color:#15803d;
+
     border-radius:8px;
+
     text-align:center;
+
     font-weight:bold;
 }
 
-/* RISK */
+
+/* =========================
+   RISK
+========================= */
 
 .risk-panel{
+
     margin-top:25px;
-    background:linear-gradient(135deg,#082f49,#075985);
+
+    background:
+        linear-gradient(
+            135deg,
+            #082f49,
+            #075985
+        );
+
     color:white;
+
     padding:30px;
+
     border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.15);
 }
 
 .risk-header{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:20px;
 }
 
+.risk-label{
+    font-size:18px;
+}
+
 .risk-value{
+
     font-size:40px;
+
     font-weight:bold;
+
+    margin-top:8px;
 }
 
 .risk-description{
+
     margin-top:15px;
+
     line-height:1.6;
+
     color:#dbeafe;
 }
 
 .warning{
+
     margin-top:20px;
+
     padding:16px;
+
     border-radius:10px;
+
     background:#fef3c7;
+
     color:#92400e;
+
     font-weight:bold;
 }
 
-/* TIMELINE */
+
+/* =========================
+   SCORE BAR
+========================= */
+
+.score-container{
+
+    margin-top:25px;
+}
+
+.score-label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:8px;
+
+    color:#dbeafe;
+}
+
+.score-bar{
+
+    width:100%;
+
+    height:18px;
+
+    background:#dbeafe;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.score-fill{
+
+    height:100%;
+
+    width:0%;
+
+    background:#22c55e;
+
+    border-radius:20px;
+
+    transition:
+        width 1s ease;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
 
 .timeline{
+
     background:white;
+
     border-radius:16px;
+
     padding:25px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
 }
 
 .timeline-item{
+
     display:flex;
+
     align-items:center;
+
     gap:15px;
+
     padding:14px 0;
-    border-bottom:1px solid #e5e7eb;
+
+    border-bottom:
+        1px solid #e5e7eb;
 }
 
 .timeline-dot{
+
     width:15px;
+
     height:15px;
+
     background:#16a34a;
+
     border-radius:50%;
 }
 
 .timeline-text{
+
     font-weight:bold;
 }
 
 .timeline-status{
+
     margin-left:auto;
+
     color:#16a34a;
+
     font-size:14px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+
     margin-top:40px;
+
     background:#06283d;
+
     color:#dbeafe;
+
     text-align:center;
+
     padding:25px;
+
     line-height:1.7;
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
     .weather-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .reservoir-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .river-grid{
@@ -333,6 +554,7 @@ footer{
     }
 
 }
+
 
 @media(max-width:600px){
 
@@ -361,13 +583,16 @@ footer{
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- HEADER -->
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
@@ -376,17 +601,24 @@ footer{
         <div>
 
             <div class="title">
+
                 🌊 AI-Based Real-Time Flood Risk Detection
+
             </div>
 
             <div class="subtitle">
+
                 Early Warning & Flood Monitoring System
+
             </div>
 
         </div>
 
+
         <div class="online">
+
             ● SYSTEM ONLINE
+
         </div>
 
     </div>
@@ -394,105 +626,178 @@ footer{
 </header>
 
 
+
 <div class="container">
 
 
-<!-- LOCATION -->
+<!-- ==================================================
+     LOCATION
+================================================== -->
 
-<div class="card" style="margin-bottom:25px;">
+<div class="card"
+style="margin-bottom:25px;">
 
     <div class="card-title">
+
         MONITORING LOCATION
+
     </div>
+
 
     <div class="card-value">
+
         📍 Chennai, Tamil Nadu
+
     </div>
 
+
     <div class="card-small">
+
         Live weather connected to flood-risk analysis
+
     </div>
 
 </div>
 
 
 
-<!-- LIVE WEATHER -->
+<!-- ==================================================
+     WEATHER
+================================================== -->
 
 <h2 class="section-title">
+
     🌧️ Real-Time Weather Monitoring
+
 </h2>
 
+
 <p class="section-description">
-    Current weather information received through the project backend.
+
+    Current weather information received from the live
+    weather backend.
+
 </p>
+
 
 
 <div class="weather-grid">
 
+
+    <!-- TEMPERATURE -->
+
     <div class="card">
 
         <div class="card-title">
+
             TEMPERATURE
+
         </div>
 
-        <div class="card-value" id="temperature">
+
+        <div
+        class="card-value"
+        id="temperature">
+
             Loading...
+
         </div>
+
 
         <div class="card-small">
-            °C
+
+            Current temperature
+
         </div>
 
     </div>
 
 
+
+    <!-- HUMIDITY -->
+
     <div class="card">
 
         <div class="card-title">
+
             HUMIDITY
+
         </div>
 
-        <div class="card-value" id="humidity">
+
+        <div
+        class="card-value"
+        id="humidity">
+
             Loading...
+
         </div>
+
 
         <div class="card-small">
+
             Relative humidity
+
         </div>
 
     </div>
 
 
+
+    <!-- RAIN -->
+
     <div class="card">
 
         <div class="card-title">
+
             RAIN
+
         </div>
 
-        <div class="card-value" id="rain">
+
+        <div
+        class="card-value"
+        id="rain">
+
             Loading...
+
         </div>
+
 
         <div class="card-small">
-            mm
+
+            Current rain (mm)
+
         </div>
 
     </div>
 
 
+
+    <!-- PRECIPITATION -->
+
     <div class="card">
 
         <div class="card-title">
+
             PRECIPITATION
+
         </div>
 
-        <div class="card-value" id="precipitation">
+
+        <div
+        class="card-value"
+        id="precipitation">
+
             Loading...
+
         </div>
+
 
         <div class="card-small">
-            mm
+
+            Current precipitation (mm)
+
         </div>
 
     </div>
@@ -501,99 +806,158 @@ footer{
 
 
 
-<!-- FLOOD FORMATION -->
+<br>
+<br>
 
-<br><br>
+
+
+<!-- ==================================================
+     FLOOD FORMATION
+================================================== -->
 
 <h2 class="section-title">
+
     🌊 Physical Flood Formation Process
+
 </h2>
 
+
 <p class="section-description">
-    The system represents how rainfall can affect reservoirs,
-    releases, rivers and downstream flood risk.
+
+    The system represents the physical process through
+    which rainfall can influence reservoirs, rivers
+    and downstream flood risk.
+
 </p>
+
 
 
 <div class="process">
 
+
     <div class="process-box">
 
-        <div class="process-icon">🌧️</div>
+        <div class="process-icon">
+            🌧️
+        </div>
 
-        <b>Heavy Rainfall</b>
+        <b>
+            Heavy Rainfall
+        </b>
 
-        <div>Rainfall increases</div>
+        <div>
+            Rainfall increases
+        </div>
 
     </div>
 
 
-    <div class="arrow">→</div>
+    <div class="arrow">
+        →
+    </div>
 
 
     <div class="process-box">
 
-        <div class="process-icon">💧</div>
+        <div class="process-icon">
+            💧
+        </div>
 
-        <b>Reservoir</b>
+        <b>
+            Reservoir
+        </b>
 
-        <div>Water level rises</div>
+        <div>
+            Water level rises
+        </div>
 
     </div>
 
 
-    <div class="arrow">→</div>
+    <div class="arrow">
+        →
+    </div>
 
 
     <div class="process-box">
 
-        <div class="process-icon">💦</div>
+        <div class="process-icon">
+            💦
+        </div>
 
-        <b>Inflow</b>
+        <b>
+            Inflow
+        </b>
 
-        <div>Water enters reservoir</div>
+        <div>
+            Water enters reservoir
+        </div>
 
     </div>
 
 
-    <div class="arrow">→</div>
+    <div class="arrow">
+        →
+    </div>
 
 
     <div class="process-box">
 
-        <div class="process-icon">🚪</div>
+        <div class="process-icon">
+            🚪
+        </div>
 
-        <b>Gate / Release</b>
+        <b>
+            Gate / Release
+        </b>
 
-        <div>Controlled operation</div>
+        <div>
+            Controlled operation
+        </div>
 
     </div>
 
 
-    <div class="arrow">→</div>
+    <div class="arrow">
+        →
+    </div>
 
 
     <div class="process-box">
 
-        <div class="process-icon">🌊</div>
+        <div class="process-icon">
+            🌊
+        </div>
 
-        <b>River</b>
+        <b>
+            River
+        </b>
 
-        <div>Downstream level</div>
+        <div>
+            Downstream level
+        </div>
 
     </div>
 
 
-    <div class="arrow">→</div>
+    <div class="arrow">
+        →
+    </div>
 
 
     <div class="process-box">
 
-        <div class="process-icon">⚠️</div>
+        <div class="process-icon">
+            ⚠️
+        </div>
 
-        <b>Flood Risk</b>
+        <b>
+            Flood Risk
+        </b>
 
-        <div>Early warning</div>
+        <div>
+            Early warning
+        </div>
 
     </div>
 
@@ -601,32 +965,52 @@ footer{
 
 
 
-<!-- RESERVOIRS -->
+<br>
+<br>
 
-<br><br>
+
+
+<!-- ==================================================
+     RESERVOIRS
+================================================== -->
 
 <h2 class="section-title">
+
     💧 Reservoir & Dam Monitoring
+
 </h2>
 
+
 <p class="section-description">
-    Official Chennai flood-monitoring locations. Actual reservoir
-    measurements are maintained by the official monitoring system.
+
+    Official Chennai flood-monitoring locations.
+    Reservoir measurements are provided by the official
+    monitoring system.
+
 </p>
+
 
 
 <div class="reservoir-grid">
 
 
+    <!-- POONDI -->
+
     <div class="reservoir-card">
 
         <div class="reservoir-name">
+
             Poondi
+
         </div>
 
+
         <div class="monitor-status">
+
             ● Official Monitoring
+
         </div>
+
 
         <div class="data-row">
 
@@ -640,6 +1024,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -652,6 +1037,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -663,6 +1049,7 @@ footer{
             </span>
 
         </div>
+
 
         <a
         class="source-btn"
@@ -677,15 +1064,23 @@ footer{
 
 
 
+    <!-- RED HILLS -->
+
     <div class="reservoir-card">
 
         <div class="reservoir-name">
+
             Red Hills
+
         </div>
 
+
         <div class="monitor-status">
+
             ● Official Monitoring
+
         </div>
+
 
         <div class="data-row">
 
@@ -699,6 +1094,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -711,6 +1107,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -722,6 +1119,7 @@ footer{
             </span>
 
         </div>
+
 
         <a
         class="source-btn"
@@ -736,15 +1134,23 @@ footer{
 
 
 
+    <!-- CHEMBARAMBAKKAM -->
+
     <div class="reservoir-card">
 
         <div class="reservoir-name">
+
             Chembarambakkam
+
         </div>
 
+
         <div class="monitor-status">
+
             ● Official Monitoring
+
         </div>
+
 
         <div class="data-row">
 
@@ -758,6 +1164,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -770,6 +1177,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -781,6 +1189,7 @@ footer{
             </span>
 
         </div>
+
 
         <a
         class="source-btn"
@@ -795,15 +1204,23 @@ footer{
 
 
 
+    <!-- CHOLAVARAM -->
+
     <div class="reservoir-card">
 
         <div class="reservoir-name">
+
             Cholavaram
+
         </div>
 
+
         <div class="monitor-status">
+
             ● Official Monitoring
+
         </div>
+
 
         <div class="data-row">
 
@@ -817,6 +1234,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -829,6 +1247,7 @@ footer{
 
         </div>
 
+
         <div class="data-row">
 
             <span class="data-label">
@@ -840,6 +1259,7 @@ footer{
             </span>
 
         </div>
+
 
         <a
         class="source-btn"
@@ -856,32 +1276,51 @@ footer{
 
 
 
-<!-- RIVER -->
+<br>
+<br>
 
-<br><br>
+
+
+<!-- ==================================================
+     RIVER
+================================================== -->
 
 <h2 class="section-title">
-    🌊 Downstream River / Water-Level Monitoring
+
+    🌊 Downstream Water-Level Monitoring
+
 </h2>
 
+
 <p class="section-description">
-    These locations are monitored by the official Chennai flood
-    monitoring system.
+
+    Important downstream monitoring locations listed
+    by the official Chennai flood monitoring system.
+
 </p>
+
 
 
 <div class="river-grid">
 
 
+    <!-- NAPIER -->
+
     <div class="river-card">
 
         <div class="river-name">
+
             🌊 Napier Bridge
+
         </div>
 
+
         <div class="river-status">
+
             Official Water-Level Monitoring
+
         </div>
+
 
         <a
         class="source-btn"
@@ -895,15 +1334,24 @@ footer{
     </div>
 
 
+
+    <!-- SAIDAPET -->
+
     <div class="river-card">
 
         <div class="river-name">
+
             🌊 Saidapet Bridge
+
         </div>
 
+
         <div class="river-status">
+
             Official Water-Level Monitoring
+
         </div>
+
 
         <a
         class="source-btn"
@@ -917,15 +1365,24 @@ footer{
     </div>
 
 
+
+    <!-- ENNORE -->
+
     <div class="river-card">
 
         <div class="river-name">
+
             🌊 Ennore Bridge
+
         </div>
 
+
         <div class="river-status">
+
             Official Water-Level Monitoring
+
         </div>
+
 
         <a
         class="source-btn"
@@ -942,47 +1399,110 @@ footer{
 
 
 
-<!-- RISK -->
+<br>
+<br>
 
-<br><br>
+
+
+<!-- ==================================================
+     AI RISK
+================================================== -->
 
 <h2 class="section-title">
+
     🤖 AI Flood Risk Analysis
+
 </h2>
+
 
 
 <div class="risk-panel">
 
+
     <div class="risk-header">
+
 
         <div>
 
-            <div style="font-size:18px;">
+            <div class="risk-label">
+
                 CURRENT FLOOD RISK
+
             </div>
 
-            <div class="risk-value" id="risk">
+
+            <div
+            class="risk-value"
+            id="risk">
+
                 ANALYSING...
+
             </div>
 
         </div>
 
-        <div style="font-size:60px;">
+
+        <div
+        style="font-size:60px;">
+
             🌊
+
         </div>
 
     </div>
 
 
-    <div class="risk-description" id="riskDescription">
 
-        The system is analysing current rainfall and precipitation
+    <!-- SCORE BAR -->
+
+    <div class="score-container">
+
+
+        <div class="score-label">
+
+            <span>
+                Risk Score
+            </span>
+
+            <span id="scoreText">
+                0 / 100
+            </span>
+
+        </div>
+
+
+        <div class="score-bar">
+
+            <div
+            class="score-fill"
+            id="scoreFill">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DESCRIPTION -->
+
+    <div
+    class="risk-description"
+    id="riskDescription">
+
+        The system is analysing current weather
         conditions.
 
     </div>
 
 
-    <div class="warning" id="warning">
+
+    <!-- WARNING -->
+
+    <div
+    class="warning"
+    id="warning">
 
         ⏳ Waiting for live weather data...
 
@@ -992,13 +1512,21 @@ footer{
 
 
 
-<!-- SYSTEM MONITORING -->
+<br>
+<br>
 
-<br><br>
+
+
+<!-- ==================================================
+     SYSTEM MONITORING
+================================================== -->
 
 <h2 class="section-title">
+
     📡 System Monitoring
+
 </h2>
+
 
 
 <div class="timeline">
@@ -1009,14 +1537,19 @@ footer{
         <div class="timeline-dot"></div>
 
         <div class="timeline-text">
+
             Weather Monitoring
+
         </div>
 
         <div class="timeline-status">
+
             LIVE
+
         </div>
 
     </div>
+
 
 
     <div class="timeline-item">
@@ -1024,14 +1557,19 @@ footer{
         <div class="timeline-dot"></div>
 
         <div class="timeline-text">
+
             Rainfall Analysis
+
         </div>
 
         <div class="timeline-status">
+
             ACTIVE
+
         </div>
 
     </div>
+
 
 
     <div class="timeline-item">
@@ -1039,14 +1577,19 @@ footer{
         <div class="timeline-dot"></div>
 
         <div class="timeline-text">
+
             Reservoir Monitoring
+
         </div>
 
         <div class="timeline-status">
+
             OFFICIAL SOURCE
+
         </div>
 
     </div>
+
 
 
     <div class="timeline-item">
@@ -1054,14 +1597,19 @@ footer{
         <div class="timeline-dot"></div>
 
         <div class="timeline-text">
+
             River Monitoring
+
         </div>
 
         <div class="timeline-status">
+
             OFFICIAL SOURCE
+
         </div>
 
     </div>
+
 
 
     <div class="timeline-item">
@@ -1069,11 +1617,15 @@ footer{
         <div class="timeline-dot"></div>
 
         <div class="timeline-text">
+
             Flood Risk Analysis
+
         </div>
 
         <div class="timeline-status">
-            AI ANALYSIS
+
+            ACTIVE
+
         </div>
 
     </div>
@@ -1085,11 +1637,16 @@ footer{
 
 
 
-<!-- FOOTER -->
+<!-- ==================================================
+     FOOTER
+================================================== -->
 
 <footer>
 
-    <b>AI-Based Real-Time Flood Risk Detection & Early Warning System</b>
+    <b>
+        AI-Based Real-Time Flood Risk Detection
+        & Early Warning System
+    </b>
 
     <br>
 
@@ -1105,139 +1662,394 @@ footer{
 
 <script>
 
-/* BACKEND */
+/* ==================================================
+   BACKEND API
+================================================== */
 
 const API =
+"https://ai-flood-risk-system-1.onrender.com/weather?lat=13.0827&lon=13.0827";
+
+
+/*
+IMPORTANT:
+Use the correct Chennai longitude below.
+*/
+
+const WEATHER_API =
 "https://ai-flood-risk-system-1.onrender.com/weather?lat=13.0827&lon=80.2707";
 
 
-/* LOAD WEATHER */
+
+/* ==================================================
+   LOAD WEATHER
+================================================== */
 
 async function loadWeather(){
 
     try{
 
-        const response = await fetch(API);
+        const response =
+            await fetch(WEATHER_API);
+
 
         if(!response.ok){
-            throw new Error("Backend error");
+
+            throw new Error(
+                "Backend connection failed"
+            );
+
         }
 
-        const data = await response.json();
+
+        const data =
+            await response.json();
 
 
-        /* DISPLAY WEATHER */
+        console.log(
+            "Live weather:",
+            data
+        );
 
-        document.getElementById("temperature").innerText =
+
+        /* =========================
+           DISPLAY WEATHER
+        ========================= */
+
+        document.getElementById(
+            "temperature"
+        ).innerText =
             data.temperature + " °C";
 
-        document.getElementById("humidity").innerText =
+
+        document.getElementById(
+            "humidity"
+        ).innerText =
             data.humidity + " %";
 
-        document.getElementById("rain").innerText =
+
+        document.getElementById(
+            "rain"
+        ).innerText =
             data.rain + " mm";
 
-        document.getElementById("precipitation").innerText =
+
+        document.getElementById(
+            "precipitation"
+        ).innerText =
             data.precipitation + " mm";
 
 
-        /* RISK CALCULATION */
 
-        let risk = "LOW";
+        /* =========================
+           GET VALUES
+        ========================= */
 
-        let description =
-            "Current rainfall conditions indicate relatively low flood risk.";
+        const rain =
+            Number(data.rain);
 
-        let warning =
-            "🟢 No immediate flood warning based on current weather data.";
-
-
-        const rain = Number(data.rain);
 
         const precipitation =
             Number(data.precipitation);
 
 
-        if(
-            rain >= 10 ||
-            precipitation >= 10
-        ){
+        const humidity =
+            Number(data.humidity);
 
-            risk = "MODERATE";
 
-            description =
-                "Rainfall conditions are increasing. Reservoir and downstream water levels should be monitored.";
 
-            warning =
-                "🟡 MONITORING: Increased rainfall may increase water inflow.";
+        /* =========================
+           RISK SCORE
+        ========================= */
+
+        let score = 0;
+
+
+
+        /* RAINFALL FACTOR */
+
+        if(rain >= 30){
+
+            score += 40;
+
+        }
+
+        else if(rain >= 20){
+
+            score += 30;
+
+        }
+
+        else if(rain >= 10){
+
+            score += 20;
+
+        }
+
+        else if(rain > 0){
+
+            score += 10;
 
         }
 
 
-        if(
-            rain >= 30 ||
-            precipitation >= 30
-        ){
 
-            risk = "HIGH";
+        /* PRECIPITATION FACTOR */
 
-            description =
-                "Heavy rainfall conditions may increase runoff and water levels. Continuous monitoring is required.";
+        if(precipitation >= 30){
 
-            warning =
-                "🔴 WARNING: Heavy rainfall conditions detected. Monitor official flood alerts.";
+            score += 30;
+
+        }
+
+        else if(precipitation >= 20){
+
+            score += 20;
+
+        }
+
+        else if(precipitation >= 10){
+
+            score += 15;
+
+        }
+
+        else if(precipitation > 0){
+
+            score += 5;
 
         }
 
 
-        document.getElementById("risk").innerText =
+
+        /* HUMIDITY FACTOR */
+
+        if(humidity >= 90){
+
+            score += 20;
+
+        }
+
+        else if(humidity >= 80){
+
+            score += 15;
+
+        }
+
+        else if(humidity >= 70){
+
+            score += 10;
+
+        }
+
+
+
+        /* MAXIMUM */
+
+        if(score > 100){
+
+            score = 100;
+
+        }
+
+
+
+        /* =========================
+           RISK LEVEL
+        ========================= */
+
+        let risk =
+            "LOW";
+
+
+        let description =
+            "Current weather conditions indicate relatively low flood risk.";
+
+
+        let warning =
+            "🟢 LOW RISK: Continue normal monitoring.";
+
+
+
+        /* MODERATE */
+
+        if(
+            score >= 31 &&
+            score <= 60
+        ){
+
+            risk =
+                "MODERATE";
+
+
+            description =
+                "Rainfall and atmospheric conditions show increasing flood potential. Continue monitoring rainfall and official reservoir and river levels.";
+
+
+            warning =
+                "🟡 MODERATE RISK: Continue close monitoring.";
+
+        }
+
+
+
+        /* HIGH */
+
+        if(
+            score >= 61 &&
+            score <= 80
+        ){
+
+            risk =
+                "HIGH";
+
+
+            description =
+                "Current weather conditions may produce increased runoff and water accumulation. Continuous monitoring is recommended.";
+
+
+            warning =
+                "🟠 HIGH RISK: Monitor official flood warnings closely.";
+
+        }
+
+
+
+        /* CRITICAL */
+
+        if(score >= 81){
+
+            risk =
+                "CRITICAL";
+
+
+            description =
+                "Severe weather conditions may significantly increase runoff and flood potential.";
+
+
+            warning =
+                "🔴 CRITICAL: Follow official emergency and flood warnings.";
+
+        }
+
+
+
+        /* =========================
+           DISPLAY SCORE
+        ========================= */
+
+        document.getElementById(
+            "risk"
+        ).innerText =
+            score +
+            " / 100 — " +
             risk;
 
-        document.getElementById("riskDescription").innerText =
+
+        document.getElementById(
+            "scoreText"
+        ).innerText =
+            score +
+            " / 100";
+
+
+        document.getElementById(
+            "scoreFill"
+        ).style.width =
+            score + "%";
+
+
+        document.getElementById(
+            "riskDescription"
+        ).innerText =
             description;
 
-        document.getElementById("warning").innerText =
-            warning;
 
+        document.getElementById(
+            "warning"
+        ).innerText =
+            warning;
 
     }
 
+
     catch(error){
 
-        console.error(error);
+        console.error(
+            "Weather error:",
+            error
+        );
 
-        document.getElementById("temperature").innerText =
+
+        document.getElementById(
+            "temperature"
+        ).innerText =
             "Unavailable";
 
-        document.getElementById("humidity").innerText =
+
+        document.getElementById(
+            "humidity"
+        ).innerText =
             "Unavailable";
 
-        document.getElementById("rain").innerText =
+
+        document.getElementById(
+            "rain"
+        ).innerText =
             "Unavailable";
 
-        document.getElementById("precipitation").innerText =
+
+        document.getElementById(
+            "precipitation"
+        ).innerText =
             "Unavailable";
 
-        document.getElementById("risk").innerText =
+
+        document.getElementById(
+            "risk"
+        ).innerText =
             "OFFLINE";
 
-        document.getElementById("riskDescription").innerText =
+
+        document.getElementById(
+            "scoreText"
+        ).innerText =
+            "0 / 100";
+
+
+        document.getElementById(
+            "scoreFill"
+        ).style.width =
+            "0%";
+
+
+        document.getElementById(
+            "riskDescription"
+        ).innerText =
             "Unable to connect to the live weather backend.";
 
-        document.getElementById("warning").innerText =
-            "⚠️ Check backend connection.";
+
+        document.getElementById(
+            "warning"
+        ).innerText =
+            "⚠️ Check the Render backend connection.";
 
     }
 
 }
 
 
-/* FIRST LOAD */
+
+/* ==================================================
+   FIRST LOAD
+================================================== */
 
 loadWeather();
 
 
-/* REFRESH EVERY 5 MINUTES */
+
+/* ==================================================
+   REFRESH EVERY 5 MINUTES
+================================================== */
 
 setInterval(
     loadWeather,
@@ -1248,4 +2060,5 @@ setInterval(
 
 
 </body>
+
 </html>
