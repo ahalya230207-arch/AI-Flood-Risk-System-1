@@ -1,20 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AI Flood Risk System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Flood Risk Detection</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #eef6f9;
+    color: #123;
+}
+
+header {
+    background: #075985;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px #bbb;
+}
+
+.value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #075985;
+}
+
+.process {
+    margin-top: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.status {
+    margin-top: 20px;
+    padding: 15px;
+    background: #dff6e4;
+    border-radius: 10px;
+}
+
+.error {
+    background: #ffdede;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>AI-Based Real-Time Flood Risk Detection</h1>
+<header>
+    <h1>🌊 AI-Based Real-Time Flood Risk Detection</h1>
+    <p>Real-Time Flood Monitoring & Early Warning System</p>
+</header>
 
-<p>🌧️ Rainfall → 💧 Reservoir → 🚪 Release → 🌊 River → ⚠️ Flood Risk</p>
+<div class="container">
 
-<h2>System Status</h2>
-<p id="status">System starting...</p>
+    <h2>📍 Chennai — Current Weather</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌡️ Temperature</h3>
+            <div class="value" id="temperature">--</div>
+            <p>°C</p>
+        </div>
+
+        <div class="card">
+            <h3>💧 Humidity</h3>
+            <div class="value" id="humidity">--</div>
+            <p>%</p>
+        </div>
+
+        <div class="card">
+            <h3>🌧️ Rain</h3>
+            <div class="value" id="rain">--</div>
+            <p>mm</p>
+        </div>
+
+        <div class="card">
+            <h3>💦 Precipitation</h3>
+            <div class="value" id="precipitation">--</div>
+            <p>mm</p>
+        </div>
+
+    </div>
+
+    <div class="status" id="status">
+        🔄 Loading real-time weather data...
+    </div>
+
+    <div class="process">
+
+        <h2>🌊 Flood Formation Process</h2>
+
+        <p>
+            🌧️ Rainfall
+            →
+            💧 Reservoir
+            →
+            🚪 Water Release
+            →
+            🌊 River
+            →
+            🏘️ Downstream
+            →
+            ⚠️ Flood Risk
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+    AI Flood Risk Detection & Early Warning System
+</footer>
 
 <script>
-document.getElementById("status").innerText =
-    "Flood monitoring system is ready.";
+
+const API =
+"https://ai-flood-risk-system-1.onrender.com/weather?lat=13.0827&lon=80.2707";
+
+async function loadWeather() {
+
+    try {
+
+        const response = await fetch(API);
+
+        if (!response.ok) {
+            throw new Error("Server error");
+        }
+
+        const data = await response.json();
+
+        document.getElementById("temperature").textContent =
+            data.temperature;
+
+        document.getElementById("humidity").textContent =
+            data.humidity;
+
+        document.getElementById("rain").textContent =
+            data.rain;
+
+        document.getElementById("precipitation").textContent =
+            data.precipitation;
+
+        document.getElementById("status").textContent =
+            "✅ Real-time weather data loaded. Updated: " +
+            data.updated;
+
+    } catch (error) {
+
+        document.getElementById("status").textContent =
+            "❌ Unable to load real-time weather data.";
+
+        document.getElementById("status").classList.add("error");
+
+    }
+}
+
+loadWeather();
+
 </script>
 
 </body>
